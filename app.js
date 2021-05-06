@@ -4,10 +4,11 @@ const logger = require('log4js').getLogger()
 
 logger.level = process.argv[2]
 
-console.log(process.argv)
-
 app.use(express.json())
-// app.use('/', require('./routes'))
+app.use('/login', require('./routes/login'))
+app.use('/balance', require('./routes/balance'))
+app.use('/transactions', require('./routes/transactions'))
+app.use('/spend', require('./routes/spend'))
 
 
 app.listen(2400, () => { logger.info("server started") })
