@@ -4,9 +4,6 @@ const user = sequelize.models.user
 const User = class {
   constructor(tkn) {
     this.user = user.build({ token: tkn, amount: 1000, currency: 'GBP' })
-  }
-
-  saveUser() {
     this.user.save();
   }
 
@@ -28,6 +25,19 @@ const User = class {
         resolve(parseInt(users[0].amount) >= toSpend)
       })
     })
+  }
+
+  static getUser(tkn){
+    return new Promise((resolve, reject) => {
+      user.findAll({
+        where: {
+          token: tkn
+        }
+      }).then(data => {
+        resolve(JSON.parse(JSON.stringify(data, null, 2))[0])
+      })
+    })
+
   }
 
 }
