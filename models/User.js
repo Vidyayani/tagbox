@@ -21,7 +21,6 @@ const User = class {
         }
       }).then(data => {
         let users = JSON.parse(JSON.stringify(data, null, 2))
-        console.log(parseInt(users[0].amount))
         resolve(parseInt(users[0].amount) >= toSpend)
       })
     })

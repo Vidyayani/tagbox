@@ -18,7 +18,7 @@ sequelize.define('user', {
         allowNull: false
     },
     amount: {
-        type: DataTypes.BIGINT
+        type: DataTypes.NUMBER
     }
 }, {
     timestamps: false,
