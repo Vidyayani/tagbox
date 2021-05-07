@@ -36,7 +36,7 @@ sequelize.define('transaction', {
         type: DataTypes.TEXT
     },
     amount: {
-        type: DataTypes.BIGINT
+        type: DataTypes.NUMBER
     },
     currency: {
         type: DataTypes.TEXT
