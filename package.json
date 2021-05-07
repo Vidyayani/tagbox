@@ -4,7 +4,7 @@
   "description": "A simple node REST API app",
   "main": "app.js",
   "scripts": {
-    "test": "none",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run prod",
     "dev": "nodemon debug",
     "prod": "node info"
@@ -24,11 +24,12 @@
   },
   "homepage": "https://github.com/Vidyayani/tagbox#readme",
   "dependencies": {
-    "bcrypt": "^5.0.1",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "log4js": "^6.3.0",
-    "request": "^2.88.2"
+    "pg": "^8.6.0",
+    "request": "^2.88.2",
+    "sequelize": "^6.6.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
