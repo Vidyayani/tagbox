@@ -1,8 +1,9 @@
 const router = require('express').Router()
 const transaction = require('../models/Transaction')
 const user = require('../models/User')
+const auth = require('../middleware/authentication')
 
-router.post('/', (req,res) => {
+router.post('/', auth.verify, (req,res) => {
     let spend = parseFloat(req.body.amount)
     let tkn = req.headers.authorization
     
