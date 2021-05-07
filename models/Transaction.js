@@ -3,12 +3,8 @@ const trans = sequelize.models.transaction
 
 const transaction = class {
 
-  constructor(tkn, desc, amt) {
-    this.trans = trans.build({ date: new Date(), token: tkn, description: desc, amount: amt, currency: "GBP" })
-
-  }
-
-  saveTransaction() {
+  constructor(tkn,dt, desc, amt,curr) {
+    this.trans = trans.build({ date: Date.parse(dt), token: tkn, description: desc, amount: parseFloat(amt), currency:curr })
     this.trans.save();
   }
 
